@@ -47,8 +47,7 @@ namespace CRUD_todo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,task,description,end_date,status")] Todo todo)
-        //public ActionResult Create([Bind(Include = "id,created_at,task,description,end_date,status")] Todo todo)
+        public ActionResult Create([Bind(Include = "id,task,category,description,end_date,status")] Todo todo)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +79,8 @@ namespace CRUD_todo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,created_at,task,description,end_date,status")] Todo todo)
+        //public ActionResult Edit([Bind(Include = "id,task,description,end_date,status")] Todo todo)
+        public ActionResult Edit([Bind(Include = "id,task,category,description,end_date,status")] Todo todo)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace CRUD_todo.Controllers
                 return RedirectToAction("Index");
             }
             return View(todo);
-        }
+    }
 
         // GET: Todoes/Delete/5
         public ActionResult Delete(int? id)

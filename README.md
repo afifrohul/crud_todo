@@ -3,6 +3,7 @@
 postgreSQL query
 
 create databasae todo
+
 create table todo(
 id serial not null,
 task varchar(300) not null,
